@@ -13,6 +13,7 @@ install:
   - echo 'eval "$(anyenv init -)"' >~/.anyenv_bashrc
   - source ~/.anyenv_bashrc
   - anyenv install plenv
+  - exec $SHELL -l
 
 script:
   - perl -v
