@@ -10,10 +10,10 @@ language: perl
 install:
   - git clone https://github.com/riywo/anyenv ~/.anyenv
   - export PATH="$HOME/.anyenv/bin:$PATH"
-  - echo 'eval "$(anyenv init -)"' >~/.anyenv_bashrc
-  - source ~/.anyenv_bashrc
+  - echo 'eval "$(anyenv init -)"' >~/.bashrc
+  - source ~/.bashrc
   - anyenv install plenv
-  - exec $SHELL -l
+  - source ~/.bashrc
 
 script:
   - perl -v
