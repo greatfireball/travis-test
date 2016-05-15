@@ -7,7 +7,12 @@ sudo: false
 language: perl
 
 # normally cpanm is called for perl, but we do not need it so skip the installation of dependencies
-install: true
+install:
+  - git clone https://github.com/riywo/anyenv ~/.anyenv
+  - export PATH="$HOME/.anyenv/bin:$PATH"
+  - echo 'eval "$(anyenv init -)"' ~/.anyenv_bashrc
+  - source ~/.anyenv_bashrc
+  - anyenv install plenv
 
 script:
   - prove ./test.sh
