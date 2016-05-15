@@ -16,5 +16,7 @@ install:
   - source ~/.bashrc
 
 script:
+  - plenv install --list
+  - plenv install 5.16.2 -Dusethreads
   - perl -v
   - prove ./test.sh
